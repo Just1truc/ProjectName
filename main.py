@@ -16,7 +16,7 @@ game = Game()
 #charger le joueur
 running = True
 
-#bouble d'execution
+#boucle d'execution
 while running:
     
     #appliquer l'arriere plan de notre jeu, les nombres sont le coordonées en x et y de ce que vois le joueur
