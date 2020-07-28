@@ -1,5 +1,7 @@
 import pygame
-from game import Game
+import random
+
+m = 0
 
 class Monster(pygame.sprite.Sprite):
     def __init__(self,game):
@@ -8,12 +10,12 @@ class Monster(pygame.sprite.Sprite):
         self.game = game
         self.health = 100
         self.max_health = 100
-        self.attack = 1
-        self.image = pygame.image.load("./assets/mummy.png")
+        self.attack = 0.1
+        self.image = pygame.image.load("../assets/mummy.png")
         self.rect = self.image.get_rect()
         self.rect.x = 1000 + random.randint(0,300)
         self.rect.y = 540
-        self.velocity = random.randint(1,3)
+        self.velocity = random.randint(1,2)
 
     def damage(self, amount):
         global m
@@ -23,7 +25,7 @@ class Monster(pygame.sprite.Sprite):
             self.rect.x = 1000 + random.randint(0,300)
             self.rect.y = 540
             self.health = 100
-            self.velocity = random.randint(2,6)
+            self.velocity = random.randint(1,2)
             if m == 1:
                 self.game.spawn_monster()
                 m=0

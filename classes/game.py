@@ -1,4 +1,7 @@
 import pygame
+from sol import Sol
+from player import Player
+from monster import Monster
 
 class Game:
 
@@ -13,6 +16,7 @@ class Game:
         self.all_monsters = pygame.sprite.Group()
         self.pressed = {}
         self.spawn_monster()
+        self.sol = Sol()
 
     def check_collision(self, sprite, group):
         return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)
